@@ -1,0 +1,36 @@
+<% layout('./layout/broilerplate.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .card {
+            position: absolute; /* Add this line to position the card absolutely */
+            top: 50%; /* Add this line to move the card 50% down from the top */
+            left: 50%; /* Add this line to move the card 50% from the left */
+            transform: translate(-50%, -50%); /* Add this line to adjust the position */
+            margin: 0 auto; /* Add this line to center the card horizontally */
+            float: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Featured Projects
+  </div>
+  <ul class="list-group list-group-flush">
+    <a href="/item" class="list-group-item">Project1</a>
+    <a href="/item" class="list-group-item">Project2</a>
+    <a href="#" class="list-group-item">Project3</a>
+    <a href="#" class="list-group-item">Project4</a>
+  </ul>
+</div>
+
+</body>
+
+</html>

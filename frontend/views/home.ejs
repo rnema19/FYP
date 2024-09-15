@@ -1,36 +1,92 @@
 <% layout('./layout/broilerplate.ejs') %>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ongoing Projects</title>
     <style>
-        .card {
-            position: absolute; /* Add this line to position the card absolutely */
-            top: 50%; /* Add this line to move the card 50% down from the top */
-            left: 50%; /* Add this line to move the card 50% from the left */
-            transform: translate(-50%, -50%); /* Add this line to adjust the position */
-            margin: 0 auto; /* Add this line to center the card horizontally */
-            float: none;
-        }
+      /* (Same CSS as before) */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      nav {
+        background-color: #333;
+        color: white;
+        padding: 1rem;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+      nav ul li {
+        margin-right: 1rem;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+      .project-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+      .project-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .project-info {
+        margin-bottom: 0.5rem;
+      }
+      .project-completion {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        font-weight: bold;
+        color: #4caf50;
+      }
     </style>
-</head>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ongoing Projects</h1>
+      <div class="project-grid" id="projectGrid">
+        <% projects.forEach(function(project) { %>
+          <div class="project-card" onclick="window.location.href='./project-details?id=<%= project.id %>';">
+            <div class="project-name"><%= project.name %></div>
+            <div class="project-info">Supervisor: <%= project.supervisor %></div>
+            <div class="project-info">Company: <%= project.company %></div>
+            <div class="project-completion"><%= project.completion %> % Complete</div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
 
-<body>
-    <div class="card" style="width: 18rem;">
-  <div class="card-header">
-    Featured Projects
-  </div>
-  <ul class="list-group list-group-flush">
-    <a href="/item" class="list-group-item">Project1</a>
-    <a href="/item" class="list-group-item">Project2</a>
-    <a href="#" class="list-group-item">Project3</a>
-    <a href="#" class="list-group-item">Project4</a>
-  </ul>
-</div>
-
-</body>
-
+    <script>
+      // You can remove the client-side JavaScript as projects are now rendered server-side
+    </script>
+  </body>
 </html>

@@ -1,0 +1,83 @@
+<% layout('./layout/broilerplate.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Management</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+      }
+      .left-section,
+      .right-section {
+        width: 20%;
+        background-color: #f0f0f0;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .main-section {
+        width: 60%;
+        padding: 20px;
+      }
+      .left-section ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .left-section ul li {
+        padding: 10px 0;
+        cursor: pointer;
+      }
+      .left-section ul li:hover {
+        background-color: #ddd;
+      }
+      .right-section textarea {
+        width: 100%;
+        height: 80%;
+        resize: none;
+      }
+      .right-section button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      .right-section button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      
+      <div class="main-section">
+        <h1>PG Classroom CRC</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+          odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+          quis sem at nibh elementum imperdiet.
+        </p>
+        <p>
+          Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue
+          semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.
+        </p>
+        <p>
+          Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+          per inceptos himenaeos. Curabitur sodales ligula in libero. Sed
+          dignissim lacinia nunc.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

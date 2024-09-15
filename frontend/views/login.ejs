@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Management Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .welcome-message {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .welcome-message h1 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .welcome-message p {
+        color: #555;
+        font-size: 1rem;
+      }
+      .login-container {
+        background-color: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        position: relative;
+      }
+      .login-container h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      input {
+        margin-bottom: 15px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .error {
+        color: red;
+        margin-bottom: 15px;
+        text-align: center;
+        display: none;
+      }
+      .back-link {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        text-decoration: none;
+        color: #4caf50;
+        font-size: 14px;
+      }
+      .back-link:hover {
+        text-decoration: underline;
+      }
+      footer {
+        text-align: center;
+        color: #777;
+        margin-top: 20px;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Welcome Message -->
+    <div class="welcome-message">
+      <h1>Welcome to the Project Management Dashboard</h1>
+      <p>
+        Manage your projects efficiently and collaborate with your team seamlessly.
+      </p>
+    </div>
+
+    <!-- Login Container -->
+    <div class="login-container">
+      <!-- Back Link -->
+      <a href="/home" class="back-link">&larr; Back</a>
+
+      <!-- Login Form -->
+      <h1>Project Management</h1>
+      <form id="loginForm">
+        <input type="text" id="username" name="username" placeholder="Username" required />
+        <input type="password" id="password" name="password" placeholder="Password" required />
+        <div id="error" class="error">Incorrect username or password</div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Project Management System. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Form Handling -->
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const errorElement = document.getElementById("error");
+
+          // Replace the following condition with your authentication logic
+          if (username === "admin" && password === "password123") {
+            window.location.href = "/home";
+          } else {
+            errorElement.textContent = "Incorrect username or password";
+            errorElement.style.display = "block";
+          }
+        });
+    </script>
+  </body>
+</html>

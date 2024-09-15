@@ -1,0 +1,146 @@
+<% layout('./layout/broilerplate.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comments - Project Management</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+      }
+      .left-section,
+    .right-section {
+    width: 55%; /* Increased from 20% to 25% */
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    height: 100vh;
+    }
+    .main-section {
+    width: 50%; /* Adjusted from 60% to accommodate the increased right-section */
+    padding: 20px;
+    overflow-y: auto;
+    height: 100vh;
+    }
+      .left-section ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      .left-section ul li {
+        padding: 10px 0;
+        cursor: pointer;
+      }
+      .left-section ul li:hover {
+        background-color: #ddd;
+      }
+      .right-section textarea {
+        width: 100%;
+        height: 60%;
+        resize: none;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+      .right-section button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      .right-section button:hover {
+        background-color: #45a049;
+      }
+      .comment-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        margin-bottom: 15px;
+      }
+      .comment-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .comment-author {
+        font-weight: bold;
+        color: #333;
+      }
+      .comment-date {
+        font-size: 0.9rem;
+        color: #777;
+      }
+      .comment-body {
+        font-size: 1rem;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      
+
+      <!-- Main Content Section -->
+      <div class="main-section">
+        <h1>Comments</h1>
+
+        <!-- Sample Comment Cards -->
+        <div class="comment-card">
+          <div class="comment-header">
+            <span class="comment-author">John Doe</span>
+            <span class="comment-date">September 10, 2024</span>
+          </div>
+          <div class="comment-body">
+            This project is progressing well. Looking forward to the next milestones!
+          </div>
+        </div>
+
+        <div class="comment-card">
+          <div class="comment-header">
+            <span class="comment-author">Jane Smith</span>
+            <span class="comment-date">September 11, 2024</span>
+          </div>
+          <div class="comment-body">
+            I've reviewed the latest drawings. Everything looks good on my end.
+          </div>
+        </div>
+
+        <div class="comment-card">
+          <div class="comment-header">
+            <span class="comment-author">Mike Johnson</span>
+            <span class="comment-date">September 12, 2024</span>
+          </div>
+          <div class="comment-body">
+            We encountered a minor issue with the tender process, but it's being resolved.
+          </div>
+        </div>
+
+        <!-- Add more comment cards as needed -->
+      </div>
+
+      <!-- Right Sidebar for Adding Comments -->
+      <div class="right-section">
+        <h2>Add Comments</h2>
+        <textarea placeholder="Write your comment here..."></textarea>
+        <button>Add Comment</button>
+      </div>
+    </div>
+  </body>
+</html>
